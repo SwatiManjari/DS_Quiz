@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Structure Quiz</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body class="container">
+    <div id="welcome-page">
+        <div class="a">
+            <h1>Data Structure Quiz</h1>
+        </div>
+        <div class="b1">
+        <input id="Input-nm" type="text" name="username" placeholder="Please Enter your Name:">
+        </div>
+        <div class="b2">
+        <button id="input-btn" type="button">Click here to choose a topic</button>
+        </div>
+    </div>
+    <div id="topic-page" class="hidden">
+        <div class="a">
+        <h1>Topics</h1>
+        </div>
+        <button class="topic">Arrays</button>
+        <button class="topic">Linked List</button>
+        <button class="topic">Stack</button>
+        <button class="topic">Queue</button>
+        <button class="topic">Tree</button>
+        <button class="topic">Graph</button>
+    </div>
+    <div id="quiz-page" class="hidden">
+    <div class="card">
+        <h2 id="question-text"></h2>
+        <button class="option"></button>
+        <button class="option"></button>
+        <button class="option"></button>
+        <button class="option"></button>
+    </div>
+    </div>
+    <div id="result-page" class="hidden">
+        <h2 id="result-text"></h2>    </div>
+    <script src="./index.js"></script>
+</body>
+</html>
