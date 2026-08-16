@@ -37,7 +37,7 @@ The quiz currently includes:
 
 ## Project Structure
 
-```text
+
 Data_Structure/
 │
 ├── index.html
