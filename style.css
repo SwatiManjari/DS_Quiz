@@ -1,102 +1,137 @@
 @import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700&family=Quicksand:wght@400;500;600;700&display=swap');
 
+
 :root {
-  --bg: #f5f1ff;
-  --card: #ffffff;
-  --primary: #8b5fc7;
-  --primary-dark: #7044ad;
-  --primary-light: #eee5ff;
+    --bg: #f5f1ff;
 
-  --pink: #ffb6ce;
-  --mint: #b9ead8;
+    --card: #ffffff;
 
-  --text: #373044;
-  --text-soft: #81788f;
+    --primary: #8b5fc7;
+    --primary-dark: #7044ad;
+    --primary-light: #eee5ff;
 
-  --border: #e7def2;
-  --success: #72c98a;
-  --error: #e47d7d;
+    --text: #373044;
+    --text-soft: #81788f;
+
+    --border: #e7def2;
+
+    --success: #72c98a;
+    --error: #e47d7d;
 }
+
 
 * {
-  box-sizing: border-box;
+    box-sizing: border-box;
 }
+
 
 body {
-  margin: 0;
-  min-height: 100vh;
-  padding: 24px;
+    margin: 0;
+    min-height: 100vh;
+    padding: 24px;
 
-  display: flex;
-  justify-content: center;
-  align-items: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
-  background:
-    radial-gradient(circle at top left, #eadcff 0, transparent 35%),
-    radial-gradient(circle at bottom right, #ffe1ed 0, transparent 35%),
-    var(--bg);
+    background:
+        radial-gradient(
+            circle at top left,
+            #eadcff 0,
+            transparent 35%
+        ),
+        radial-gradient(
+            circle at bottom right,
+            #ffe1ed 0,
+            transparent 35%
+        ),
+        var(--bg);
 
-  font-family: 'Quicksand', sans-serif;
-  color: var(--text);
-}
-
-.hidden {
-  display: none;
+    font-family: 'Quicksand', sans-serif;
+    color: var(--text);
 }
 
 
 /* =========================
-   COMMON CARD STYLE
+   HIDDEN PAGES
+========================= */
+
+.hidden {
+    display: none !important;
+}
+
+
+/* =========================
+   COMMON CARD
 ========================= */
 
 #welcome-page,
 #topic-page,
 #quiz-page .card,
 #result-page {
-  width: 100%;
-  max-width: 460px;
 
-  padding: 38px 32px;
+    width: 100%;
+    max-width: 460px;
 
-  background: rgba(255, 255, 255, 0.96);
-  border: 1px solid rgba(139, 95, 199, 0.12);
-  border-radius: 24px;
+    padding: 40px 32px;
 
-  text-align: center;
+    background: rgba(255, 255, 255, 0.97);
 
-  box-shadow:
-    0 20px 50px rgba(76, 45, 112, 0.12),
-    0 4px 12px rgba(76, 45, 112, 0.06);
+    border: 1px solid rgba(139, 95, 199, 0.12);
+
+    border-radius: 24px;
+
+    text-align: center;
+
+    box-shadow:
+        0 20px 50px rgba(76, 45, 112, 0.12),
+        0 4px 12px rgba(76, 45, 112, 0.06);
 }
 
 
 /* =========================
-   TITLES
+   WELCOME PAGE
 ========================= */
 
+#welcome-page {
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
 .a {
-  width: 100%;
-  margin-bottom: 28px;
 
-  background: transparent;
-  text-shadow: none;
+    width: 100%;
+
+    margin-bottom: 28px;
+
+    text-align: center;
 }
 
-.a h1,
-#topic-page h1 {
-  margin: 0;
 
-  font-family: 'Baloo 2', cursive;
-  font-size: 2rem;
-  line-height: 1.2;
+.a h1 {
 
-  color: var(--primary);
+    margin: 0;
+
+    font-family: 'Baloo 2', cursive;
+
+    font-size: 2.1rem;
+
+    line-height: 1.2;
+
+    color: var(--primary);
 }
+
 
 .a p {
-  margin: 8px 0 0;
-  color: var(--text-soft);
-  font-size: 0.95rem;
+
+    margin: 8px 0 0;
+
+    color: var(--text-soft);
+
+    font-size: 0.95rem;
 }
 
 
@@ -105,42 +140,51 @@ body {
 ========================= */
 
 .b1 {
-  display: flex;
-  justify-content: center;
 
-  height: auto;
-  margin: 12px 0 16px;
+    width: 100%;
+
+    margin-bottom: 16px;
 }
+
 
 #Input-nm {
-  width: 100%;
 
-  padding: 14px 16px;
+    width: 100%;
 
-  border: 2px solid var(--border);
-  border-radius: 14px;
+    padding: 14px 16px;
 
-  background: #fcfaff;
+    border: 2px solid var(--border);
 
-  font-family: inherit;
-  font-size: 1rem;
-  color: var(--text);
+    border-radius: 14px;
 
-  outline: none;
+    background: #fcfaff;
 
-  transition: 0.2s ease;
+    font-family: inherit;
+
+    font-size: 1rem;
+
+    color: var(--text);
+
+    outline: none;
+
+    transition: 0.2s ease;
 }
+
 
 #Input-nm::placeholder {
-  color: #aaa2b5;
+
+    color: #aaa2b5;
 }
 
+
 #Input-nm:focus {
-  border-color: var(--primary);
 
-  background: #fff;
+    border-color: var(--primary);
 
-  box-shadow: 0 0 0 4px rgba(139, 95, 199, 0.1);
+    background: #ffffff;
+
+    box-shadow:
+        0 0 0 4px rgba(139, 95, 199, 0.1);
 }
 
 
@@ -149,48 +193,57 @@ body {
 ========================= */
 
 .b2 {
-  display: flex;
-  justify-content: center;
 
-  height: auto;
-  margin-top: 12px;
+    width: 100%;
 }
+
 
 #input-btn {
-  width: 100%;
 
-  padding: 14px 20px;
+    width: 100%;
 
-  border: none;
-  border-radius: 14px;
+    padding: 14px 20px;
 
-  background: var(--primary);
-  color: white;
+    border: none;
 
-  font-family: 'Baloo 2', cursive;
-  font-size: 1.05rem;
-  font-weight: 700;
+    border-radius: 14px;
 
-  cursor: pointer;
+    background: var(--primary);
 
-  box-shadow: 0 8px 18px rgba(139, 95, 199, 0.25);
+    color: white;
 
-  transition:
-    transform 0.15s ease,
-    background-color 0.15s ease,
-    box-shadow 0.15s ease;
+    font-family: 'Baloo 2', cursive;
+
+    font-size: 1.05rem;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 8px 18px rgba(139, 95, 199, 0.25);
+
+    transition:
+        transform 0.15s ease,
+        background-color 0.15s ease,
+        box-shadow 0.15s ease;
 }
+
 
 #input-btn:hover {
-  background: var(--primary-dark);
 
-  transform: translateY(-2px);
+    background: var(--primary-dark);
 
-  box-shadow: 0 10px 22px rgba(139, 95, 199, 0.3);
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 10px 22px rgba(139, 95, 199, 0.3);
 }
 
+
 #input-btn:active {
-  transform: translateY(0);
+
+    transform: translateY(0);
 }
 
 
@@ -199,53 +252,71 @@ body {
 ========================= */
 
 #topic-page {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 10px;
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    justify-content: center;
+
+    gap: 10px;
 }
+
 
 #topic-page .a {
-  width: 100%;
-  margin-bottom: 12px;
+
+    width: 100%;
+
+    margin-bottom: 12px;
 }
+
 
 .topic {
-  width: calc(50% - 5px);
 
-  margin: 0;
-  padding: 15px 10px;
+    width: calc(50% - 5px);
 
-  border: 2px solid var(--border);
-  border-radius: 14px;
+    padding: 15px 10px;
 
-  background: #fcfaff;
-  color: var(--text);
+    border: 2px solid var(--border);
 
-  font-family: inherit;
-  font-size: 0.95rem;
-  font-weight: 700;
+    border-radius: 14px;
 
-  cursor: pointer;
+    background: #fcfaff;
 
-  transition:
-    transform 0.15s ease,
-    background-color 0.15s ease,
-    border-color 0.15s ease,
-    box-shadow 0.15s ease;
+    color: var(--text);
+
+    font-family: inherit;
+
+    font-size: 0.95rem;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.15s ease,
+        background-color 0.15s ease,
+        border-color 0.15s ease,
+        box-shadow 0.15s ease;
 }
+
 
 .topic:hover {
-  background: var(--primary-light);
-  border-color: #cdb7eb;
 
-  transform: translateY(-2px);
+    background: var(--primary-light);
 
-  box-shadow: 0 6px 14px rgba(139, 95, 199, 0.1);
+    border-color: #cdb7eb;
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 6px 14px rgba(139, 95, 199, 0.1);
 }
 
+
 .topic:active {
-  transform: translateY(0);
+
+    transform: translateY(0);
 }
 
 
@@ -254,92 +325,105 @@ body {
 ========================= */
 
 #quiz-page {
-  display: flex;
-  justify-content: center;
 
-  width: 100%;
+    width: 100%;
 }
+
 
 #quiz-page .card {
-  padding: 32px;
+
+    margin: 0 auto;
 }
 
-
-/* Question */
 
 #question-text {
-  margin: 0 0 24px;
 
-  font-family: 'Baloo 2', cursive;
-  font-size: 1.3rem;
-  line-height: 1.45;
+    margin: 0 0 24px;
 
-  color: var(--text);
+    font-family: 'Baloo 2', cursive;
+
+    font-size: 1.3rem;
+
+    line-height: 1.45;
+
+    color: var(--text);
 }
 
 
-/* Options */
+/* =========================
+   OPTIONS
+========================= */
 
 .option {
-  display: block;
 
-  width: 100%;
+    display: block;
 
-  margin: 10px 0;
-  padding: 14px 16px;
+    width: 100%;
 
-  border: 2px solid var(--border);
-  border-radius: 14px;
+    margin: 10px 0;
 
-  background: #fcfaff;
-  color: var(--text);
+    padding: 14px 16px;
 
-  text-align: left;
+    border: 2px solid var(--border);
 
-  font-family: inherit;
-  font-size: 0.95rem;
-  font-weight: 600;
+    border-radius: 14px;
 
-  cursor: pointer;
+    background: #fcfaff;
 
-  transition:
-    transform 0.15s ease,
-    background-color 0.15s ease,
-    border-color 0.15s ease,
-    box-shadow 0.15s ease;
+    color: var(--text);
+
+    text-align: left;
+
+    font-family: inherit;
+
+    font-size: 0.95rem;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.15s ease,
+        background-color 0.15s ease,
+        border-color 0.15s ease,
+        box-shadow 0.15s ease;
 }
 
+
 .option:hover {
-  background: var(--primary-light);
-  border-color: #cdb7eb;
 
-  transform: translateX(3px);
+    background: var(--primary-light);
 
-  box-shadow: 0 5px 12px rgba(139, 95, 199, 0.08);
+    border-color: #cdb7eb;
+
+    transform: translateX(3px);
+
+    box-shadow:
+        0 5px 12px rgba(139, 95, 199, 0.08);
 }
 
 
 /* Correct answer */
 
 .option[style*="green"] {
-  background: var(--success) !important;
-  border-color: var(--success) !important;
 
-  color: white !important;
+    background: var(--success) !important;
 
-  box-shadow: 0 6px 15px rgba(114, 201, 138, 0.25);
+    border-color: var(--success) !important;
+
+    color: white !important;
 }
 
 
 /* Wrong answer */
 
 .option[style*="red"] {
-  background: var(--error) !important;
-  border-color: var(--error) !important;
 
-  color: white !important;
+    background: var(--error) !important;
 
-  box-shadow: 0 6px 15px rgba(228, 125, 125, 0.25);
+    border-color: var(--error) !important;
+
+    color: white !important;
 }
 
 
@@ -348,17 +432,26 @@ body {
 ========================= */
 
 #result-page {
-  padding: 42px 32px;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
 }
 
+
 #result-text {
-  margin: 0;
 
-  font-family: 'Baloo 2', cursive;
-  font-size: 1.45rem;
-  line-height: 1.4;
+    margin: 0;
 
-  color: var(--primary);
+    font-family: 'Baloo 2', cursive;
+
+    font-size: 1.5rem;
+
+    line-height: 1.4;
+
+    color: var(--primary);
 }
 
 
@@ -368,32 +461,43 @@ body {
 
 @media (max-width: 480px) {
 
-  body {
-    padding: 16px;
-  }
+    body {
+        padding: 16px;
+    }
 
-  #welcome-page,
-  #topic-page,
-  #quiz-page .card,
-  #result-page {
-    padding: 28px 20px;
-    border-radius: 20px;
-  }
 
-  .a h1,
-  #topic-page h1 {
-    font-size: 1.7rem;
-  }
+    #welcome-page,
+    #topic-page,
+    #quiz-page .card,
+    #result-page {
 
-  .topic {
-    width: 100%;
-  }
+        padding: 30px 20px;
 
-  #question-text {
-    font-size: 1.15rem;
-  }
+        border-radius: 20px;
+    }
 
-  .option {
-    padding: 13px 14px;
-  }
+
+    .a h1 {
+
+        font-size: 1.8rem;
+    }
+
+
+    .topic {
+
+        width: 100%;
+    }
+
+
+    #question-text {
+
+        font-size: 1.15rem;
+    }
+
+
+    .option {
+
+        padding: 13px 14px;
+    }
+
 }

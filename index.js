@@ -87,82 +87,127 @@ const allQuestions = {
     { question: "What is the space complexity of adjacency matrix in C?", options: ["O(V)", "O(E)", "O(V²)", "O(V+E)"], answer: "O(V²)" }
   ]
 }
-startBtn.addEventListener("click",function()
-{
-    userName=Inputname.value;
-    wlcmPage.classList.add("hidden")
-    topicPage.classList.remove("hidden")
-})
-var n=document.querySelectorAll(".topic").length
-for(var i=0;i<n;i++)
-{
-    document.querySelectorAll(".topic")[i].addEventListener("click",function()
-{
-    topicPage.classList.add("hidden")
-    quizPage.classList.remove("hidden")
-    var selectedTopic=this.textContent;
-    currentQuestions = allQuestions[selectedTopic] 
-    showQuestion()
-})
-}
-function showQuestion()
-{
-    questionText=document.getElementById("question-text")
-    options=document.querySelectorAll(".option")
-    n=options.length
-    for(var i=0;i<n;i++)
-    {
-        options[i].style.backgroundColor=""
-    }
-    questionText.textContent=currentQuestions[currentQuestionIndex].question
-    for(var i=0;i<n;i++)
-    {
-        options[i].textContent=currentQuestions[currentQuestionIndex].options[i]
-    }
-}
-var clickedBtn=document.querySelectorAll(".option")
-var n=clickedBtn.length
-for(var i=0;i<n;i++)
-{
-    clickedBtn[i].addEventListener("click",function()
-{
-    if(this.textContent===currentQuestions[currentQuestionIndex].answer)
-    {
-        score++
-        this.style.backgroundColor="green"
-    }
-    else
-    {
-        this.style.backgroundColor="red"
-    }
-    setTimeout(function(){
 
-    currentQuestionIndex++;
 
-    if(currentQuestionIndex<10)
-    {
-        showQuestion()
-    }
-    else
-    {
-        quizPage.classList.add("hidden")
-        resultPage.classList.remove("hidden")
+startBtn.addEventListener("click", function () {
 
-        document.getElementById("result-text").textContent=userName + "! You scored " + score + "/10!"
-    }
-},250)
-})
+    userName = Inputname.value;
+
+    wlcmPage.classList.add("hidden");
+
+    topicPage.classList.remove("hidden");
+
+});
+
+
+
+var topics = document.querySelectorAll(".topic");
+
+
+for (var i = 0; i < topics.length; i++) {
+
+    topics[i].addEventListener("click", function () {
+
+        topicPage.classList.add("hidden");
+
+        quizPage.classList.remove("hidden");
+
+        var selectedTopic = this.textContent;
+
+        currentQuestions = allQuestions[selectedTopic];
+
+        currentQuestionIndex = 0;
+
+        score = 0;
+
+        showQuestion();
+
+    });
+
 }
-var nextBtn=document.getElementById("next-btn")
-nextBtn.addEventListener("click",function()
-{
-    currentQuestionIndex=currentQuestionIndex+1
-    if(currentQuestionIndex<10)
-    {
-        showQuestion()
+
+
+
+function showQuestion() {
+
+    var questionText =
+        document.getElementById("question-text");
+
+    var options =
+        document.querySelectorAll(".option");
+
+
+    questionText.textContent =
+        currentQuestions[currentQuestionIndex].question;
+
+
+    for (var i = 0; i < options.length; i++) {
+
+        options[i].textContent =
+            currentQuestions[currentQuestionIndex].options[i];
+
+        options[i].style.backgroundColor = "";
+
+        options[i].style.borderColor = "";
+
     }
-    else{
-        quizPage.classList.add("hidden")
-        resultPage.classList.remove("hidden")
-    }
-})
+
+}
+
+
+var clickedBtn =
+    document.querySelectorAll(".option");
+
+
+for (var i = 0; i < clickedBtn.length; i++) {
+
+    clickedBtn[i].addEventListener("click", function () {
+
+        var selectedAnswer = this.textContent;
+
+        var correctAnswer =
+            currentQuestions[currentQuestionIndex].answer;
+
+
+        if (selectedAnswer === correctAnswer) {
+
+            score++;
+
+            this.style.backgroundColor = "green";
+
+        }
+
+        else {
+
+            this.style.backgroundColor = "red";
+
+        }
+
+
+        setTimeout(function () {
+
+            currentQuestionIndex++;
+
+
+            if (currentQuestionIndex < 10) {
+
+                showQuestion();
+
+            }
+
+            else {
+
+                quizPage.classList.add("hidden");
+
+                resultPage.classList.remove("hidden");
+
+                document.getElementById("result-text").textContent =
+                    userName + "! You scored " + score + "/10!";
+
+            }
+
+        }, 250);
+
+    });
+
+}
