@@ -1,202 +1,503 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700&family=Quicksand:wght@400;500;600;700&display=swap');
 
+
 :root {
-  --bg: #F3E9FB;
-  --card: #FFFFFF;
-  --lavender: #A97FDC;
-  --pink: #FFB6CE;
-  --mint: #AEE6D3;
-  --text: #4A4458;
-  --text-soft: #8A8296;
-  --success: #7FC98B;
-  --error: #E88888;
+    --bg: #f5f1ff;
+
+    --card: #ffffff;
+
+    --primary: #8b5fc7;
+    --primary-dark: #7044ad;
+    --primary-light: #eee5ff;
+
+    --text: #373044;
+    --text-soft: #81788f;
+
+    --border: #e7def2;
+
+    --success: #72c98a;
+    --error: #e47d7d;
 }
+
 
 * {
-  box-sizing: border-box;
+    box-sizing: border-box;
 }
+
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    padding: 24px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background:
+        radial-gradient(
+            circle at top left,
+            #eadcff 0,
+            transparent 35%
+        ),
+        radial-gradient(
+            circle at bottom right,
+            #ffe1ed 0,
+            transparent 35%
+        ),
+        var(--bg);
+
+    font-family: 'Quicksand', sans-serif;
+    color: var(--text);
+}
+
+
+/* =========================
+   HIDDEN PAGES
+========================= */
 
 .hidden {
-  display: none;
+    display: none !important;
 }
 
-body.container {
-  margin: 0;
-  min-height: 100vh;
-  padding: 24px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: var(--bg);
-  font-family: 'Quicksand', sans-serif;
-  color: var(--text);
-}
 
+/* =========================
+   COMMON CARD
+========================= */
 
 #welcome-page,
 #topic-page,
 #quiz-page .card,
 #result-page {
-  background: var(--card);
-  border-radius: 20px;
-  padding: 36px 28px;
-  width: 100%;
-  max-width: 420px;
-  text-align: center;
-  box-shadow: 0 10px 25px rgba(169, 127, 220, 0.18);
+
+    width: 100%;
+    max-width: 460px;
+
+    padding: 40px 32px;
+
+    background: rgba(255, 255, 255, 0.97);
+
+    border: 1px solid rgba(139, 95, 199, 0.12);
+
+    border-radius: 24px;
+
+    text-align: center;
+
+    box-shadow:
+        0 20px 50px rgba(76, 45, 112, 0.12),
+        0 4px 12px rgba(76, 45, 112, 0.06);
 }
 
-/* ---------- Titles ---------- */
+
+/* =========================
+   WELCOME PAGE
+========================= */
+
+#welcome-page {
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 
 .a {
-  background: transparent;
-  text-shadow: none;
-  margin-bottom: 24px;
+
+    width: 100%;
+
+    margin-bottom: 28px;
+
+    text-align: center;
 }
 
-.a h1, #topic-page h1 {
-  font-family: 'Baloo 2', cursive;
-  font-size: 1.7rem;
-  color: var(--lavender);
-  margin: 0;
+
+.a h1 {
+
+    margin: 0;
+
+    font-family: 'Baloo 2', cursive;
+
+    font-size: 2.1rem;
+
+    line-height: 1.2;
+
+    color: var(--primary);
 }
 
+
+.a p {
+
+    margin: 8px 0 0;
+
+    color: var(--text-soft);
+
+    font-size: 0.95rem;
+}
+
+
+/* =========================
+   NAME INPUT
+========================= */
 
 .b1 {
-  display: flex;
-  justify-content: center;
-  height: auto;
-  margin: 8px 0 16px;
+
+    width: 100%;
+
+    margin-bottom: 16px;
 }
+
 
 #Input-nm {
-  width: 100%;
-  padding: 12px 16px;
-  border: 2px solid #EEE0F7;
-  border-radius: 12px;
-  font-family: inherit;
-  font-size: 1rem;
-  color: var(--text);
-  outline: none;
+
+    width: 100%;
+
+    padding: 14px 16px;
+
+    border: 2px solid var(--border);
+
+    border-radius: 14px;
+
+    background: #fcfaff;
+
+    font-family: inherit;
+
+    font-size: 1rem;
+
+    color: var(--text);
+
+    outline: none;
+
+    transition: 0.2s ease;
 }
+
+
+#Input-nm::placeholder {
+
+    color: #aaa2b5;
+}
+
 
 #Input-nm:focus {
-  border-color: var(--lavender);
+
+    border-color: var(--primary);
+
+    background: #ffffff;
+
+    box-shadow:
+        0 0 0 4px rgba(139, 95, 199, 0.1);
 }
+
+
+/* =========================
+   MAIN BUTTON
+========================= */
 
 .b2 {
-  display: flex;
-  justify-content: center;
-  height: auto;
-  margin: 8px 0 0;
+
+    width: 100%;
 }
+
 
 #input-btn {
-  width: 100%;
-  padding: 13px 20px;
-  border: none;
-  border-radius: 12px;
-  background-color: var(--lavender);
-  color: #fff;
-  font-family: 'Baloo 2', cursive;
-  font-size: 1rem;
-  cursor: pointer;
-  transition: background-color 0.15s ease;
+
+    width: 100%;
+
+    padding: 14px 20px;
+
+    border: none;
+
+    border-radius: 14px;
+
+    background: var(--primary);
+
+    color: white;
+
+    font-family: 'Baloo 2', cursive;
+
+    font-size: 1.05rem;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 8px 18px rgba(139, 95, 199, 0.25);
+
+    transition:
+        transform 0.15s ease,
+        background-color 0.15s ease,
+        box-shadow 0.15s ease;
 }
+
 
 #input-btn:hover {
-  background-color: #9668CC;
+
+    background: var(--primary-dark);
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 10px 22px rgba(139, 95, 199, 0.3);
 }
 
+
+#input-btn:active {
+
+    transform: translateY(0);
+}
+
+
+/* =========================
+   TOPIC PAGE
+========================= */
 
 #topic-page {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    justify-content: center;
+
+    gap: 10px;
 }
+
 
 #topic-page .a {
-  width: 100%;
+
+    width: 100%;
+
+    margin-bottom: 12px;
 }
+
 
 .topic {
-  width: calc(50% - 8px);
-  margin: 4px;
-  padding: 14px 8px;
-  border: 2px solid #EEE0F7;
-  border-radius: 12px;
-  background-color: #FBF6FE;
-  color: var(--text);
-  font-family: inherit;
-  font-weight: 600;
-  font-size: 0.95rem;
-  cursor: pointer;
-  transition: background-color 0.15s ease, border-color 0.15s ease;
+
+    width: calc(50% - 5px);
+
+    padding: 15px 10px;
+
+    border: 2px solid var(--border);
+
+    border-radius: 14px;
+
+    background: #fcfaff;
+
+    color: var(--text);
+
+    font-family: inherit;
+
+    font-size: 0.95rem;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.15s ease,
+        background-color 0.15s ease,
+        border-color 0.15s ease,
+        box-shadow 0.15s ease;
 }
+
 
 .topic:hover {
-  background-color: var(--mint);
-  border-color: var(--mint);
+
+    background: var(--primary-light);
+
+    border-color: #cdb7eb;
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 6px 14px rgba(139, 95, 199, 0.1);
 }
 
+
+.topic:active {
+
+    transform: translateY(0);
+}
+
+
+/* =========================
+   QUIZ PAGE
+========================= */
 
 #quiz-page {
-  display: flex;
-  justify-content: center;
-  width: 100%;
+
+    width: 100%;
 }
+
+
+#quiz-page .card {
+
+    margin: 0 auto;
+}
+
 
 #question-text {
-  font-family: 'Baloo 2', cursive;
-  font-size: 1.15rem;
-  line-height: 1.5;
-  margin: 0 0 22px;
+
+    margin: 0 0 24px;
+
+    font-family: 'Baloo 2', cursive;
+
+    font-size: 1.3rem;
+
+    line-height: 1.45;
+
+    color: var(--text);
 }
+
+
+/* =========================
+   OPTIONS
+========================= */
 
 .option {
-  display: block;
-  width: 100%;
-  margin: 8px 0;
-  padding: 13px 16px;
-  border: 2px solid #EEE0F7;
-  border-radius: 12px;
-  background-color: #FBF6FE;
-  text-align: left;
-  font-family: inherit;
-  font-size: 0.95rem;
-  color: var(--text);
-  cursor: pointer;
-  transition: background-color 0.15s ease, border-color 0.15s ease;
+
+    display: block;
+
+    width: 100%;
+
+    margin: 10px 0;
+
+    padding: 14px 16px;
+
+    border: 2px solid var(--border);
+
+    border-radius: 14px;
+
+    background: #fcfaff;
+
+    color: var(--text);
+
+    text-align: left;
+
+    font-family: inherit;
+
+    font-size: 0.95rem;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.15s ease,
+        background-color 0.15s ease,
+        border-color 0.15s ease,
+        box-shadow 0.15s ease;
 }
+
 
 .option:hover {
-  border-color: var(--lavender);
+
+    background: var(--primary-light);
+
+    border-color: #cdb7eb;
+
+    transform: translateX(3px);
+
+    box-shadow:
+        0 5px 12px rgba(139, 95, 199, 0.08);
 }
+
+
+/* Correct answer */
 
 .option[style*="green"] {
-  background-color: var(--success) !important;
-  border-color: var(--success) !important;
-  color: #fff !important;
+
+    background: var(--success) !important;
+
+    border-color: var(--success) !important;
+
+    color: white !important;
 }
 
+
+/* Wrong answer */
+
 .option[style*="red"] {
-  background-color: var(--error) !important;
-  border-color: var(--error) !important;
-  color: #fff !important;
+
+    background: var(--error) !important;
+
+    border-color: var(--error) !important;
+
+    color: white !important;
+}
+
+
+/* =========================
+   RESULT PAGE
+========================= */
+
+#result-page {
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
 }
 
 
 #result-text {
-  font-family: 'Baloo 2', cursive;
-  font-size: 1.25rem;
-  color: var(--lavender);
-  margin: 0;
+
+    margin: 0;
+
+    font-family: 'Baloo 2', cursive;
+
+    font-size: 1.5rem;
+
+    line-height: 1.4;
+
+    color: var(--primary);
 }
 
 
+/* =========================
+   MOBILE
+========================= */
+
 @media (max-width: 480px) {
-  .topic {
-    width: 100%;
-  }
+
+    body {
+        padding: 16px;
+    }
+
+
+    #welcome-page,
+    #topic-page,
+    #quiz-page .card,
+    #result-page {
+
+        padding: 30px 20px;
+
+        border-radius: 20px;
+    }
+
+
+    .a h1 {
+
+        font-size: 1.8rem;
+    }
+
+
+    .topic {
+
+        width: 100%;
+    }
+
+
+    #question-text {
+
+        font-size: 1.15rem;
+    }
+
+
+    .option {
+
+        padding: 13px 14px;
+    }
+
 }
