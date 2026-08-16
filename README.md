@@ -1,17 +1,19 @@
 # Data Structure Quiz
 
-A simple browser-based quiz application to test knowledge of core data structures implemented in C. Built with plain HTML, CSS, and JavaScript.
+A simple interactive quiz website for testing your knowledge of Data Structures.
 
-## Overview
+## Features
 
-The quiz walks the user through four stages:
+- Enter your name before starting the quiz
+- Choose from different Data Structure topics
+- Multiple-choice questions
+- Instant feedback for correct and incorrect answers
+- Score displayed at the end of the quiz
+- Responsive design for smaller screens
 
-1. **Welcome page** — the user enters their name.
-2. **Topic selection** — the user picks one of six data structure topics.
-3. **Quiz page** — ten multiple-choice questions are presented one at a time for the selected topic.
-4. **Result page** — the final score out of ten is displayed.
+## Topics
 
-## Topics Covered
+The quiz currently includes:
 
 - Arrays
 - Linked List
@@ -20,34 +22,42 @@ The quiz walks the user through four stages:
 - Tree
 - Graph
 
-Each topic includes ten questions covering definitions, operations, time complexity, and C-specific implementation details.
+## Technologies Used
+
+- HTML
+- CSS
+- JavaScript
 
 ## How It Works
 
-- Selecting a topic loads its question set from the `allQuestions` object in `index.js`.
-- Clicking an option checks it against the correct answer, highlights it green (correct) or red (incorrect), and automatically advances to the next question after a short delay.
-- The score increases by one for each correct answer.
-- After all ten questions, the result page displays the user's name and final score.
+1. Enter your name on the welcome page.
+2. Choose a Data Structure topic.
+3. Answer the multiple-choice questions.
+4. Receive your final score after completing the quiz.
 
-## Running Locally
+## Project Structure
 
-1. Clone or download the repository.
-2. Open `index.html` directly in a browser, or serve the folder with a local development server (e.g. the VS Code Live Server extension).
+```text
+Data_Structure/
+│
+├── index.html
+├── style.css
+├── index.js
+└── README.md
 
-## Built With
+## Purpose
 
-- HTML5
-- CSS3
-- JavaScript (vanilla, no frameworks or libraries)
+This project was created to practice JavaScript fundamentals, DOM manipulation, event handling, and building an interactive web application.
 
-## Possible Improvements
+## Future Improvements
 
-- Add a question counter or progress indicator during the quiz.
-- Add a restart button on the result page.
-- Store and display high scores using local storage.
-- Add more topics and expand each question bank.
+- Add more questions
+- Add difficulty levels
+- Add a timer
+- Add a progress indicator
+- Improve result statistics
+- Add more Data Structure topics
 
 ## Author
 
-Swati Manjari
-GitHub: [SwatiManjari](https://github.com/SwatiManjari)
+Swati Manjari Panda
